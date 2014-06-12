@@ -1,0 +1,27 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Designer: ...
+  Site: ...
+  Twitter: ...
+  Location: Brazil
+
+
+  Front-end: Sergio Costa
+  Site: www.sergiocosta.net.br
+  Twitter: @__sergius
+  Location: Brazil
+
+
+  Back-end: Sergio Costa
+  Site: www.sergiocosta.net.br
+  Twitter: @__sergius
+  Location: Brazil
+
+
+/* SITE */
+  Standards:
+  Setup:
+  Software:
