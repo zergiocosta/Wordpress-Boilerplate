@@ -119,31 +119,6 @@ module.exports = function(grunt) {
             }
         },
 
-        // Concat
-        // Para instalar na pasta src do projeto: $ npm install grunt-contrib-concat --save-dev
-        concat: {
-            options: {
-              separator: ';'
-            },
-            dist: {
-              src: ['../assets/css/normalize.css', '../assets/css/foundation.css', '../assets/css/plugins.css', '../assets/css/style.css', '../assets/css/mediasqueries.css'],
-              dest: '../assets/css/style.css'
-            },
-        },
-
-        // Minify CSS
-        // Para instalar na pasta src do projeto: $ npm install grunt-contrib-cssmin --save-dev
-        cssmin: {
-          add_banner: {
-            options: {
-              banner: '/* Author custom styles for Geo Turismo minified file. */'
-            },
-            files: {
-              '../style.min.css': ['../style.css']
-            }
-          }
-        },
-
         // Notify
         // Para instalar na pasta src do projeto: $ npm install grunt-notify --save-dev
         notify: {
@@ -196,17 +171,8 @@ module.exports = function(grunt) {
     // Watch Project - $ grunt
     grunt.registerTask( "default", [ "watch" ]);
 
-    // Grunt GUI - $ grunt gui
-    grunt.loadNpmTasks('grunt-peon-gui');
-
     // Uglify js - $ grunt u
     grunt.registerTask( "u", [ "uglify" ]);
-
-    // Minify CSS - $ grunt cssmin
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-
-    // Concat - $ grunt concat
-    grunt.loadNpmTasks('grunt-contrib-concat');
 
     // Optimize the images files - $ grunt o
     grunt.registerTask( "o", [ "imagemin" ]);
