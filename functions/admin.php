@@ -61,7 +61,7 @@ add_action('admin_menu','wp_hide_msg');
  */
 function hide_help() {
     echo '<style type="text/css">
-#contextual-help-link-wrap { display: none !important; }
+#contextual-help-link-wrap, #screen-options-link-wrap { display: none !important; }
     </style>';
 }
 add_action('admin_head', 'hide_help');
@@ -80,7 +80,7 @@ add_filter('admin_footer_text', 'remove_footer_admin');
  * Remove version from footer.
  */
 function change_footer_version() {
-    return 'Mantido com Wordpress. Desenvolvido por: <a href="http://www.vitorbritto.com.br" target="_blank" title="Vitor Britto - Desenvolvimento Web">vitorbritto</a>';
+    return 'Mantido com Wordpress. Desenvolvido por: <a href="http://www.sergiocosta.net.br" target="_blank" title="Sergio Costa">Sergio Costa</a>';
 }
 add_filter( 'update_footer', 'change_footer_version', 9999 );
 
