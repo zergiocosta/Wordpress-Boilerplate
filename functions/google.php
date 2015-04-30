@@ -23,7 +23,6 @@ function google_analytics() { ?>
 </script>
 
 <?php }
-
 add_action('wp_footer', 'google_analytics');
 
 
@@ -73,5 +72,4 @@ function google_maps() { ?>
     </script>
 
 <?php }
-
 add_action('wp_footer', 'google_maps');

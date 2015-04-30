@@ -4,6 +4,25 @@ Theme URI: http://www.projectsite.com
 Description: WordPress Theme for Project Name
 Author: Sergio Costa
 Author URI: http://www.sergiocosta.net.br
-Version: 0.1.0
+Version: 1.0.0
 Tags:
+Text Domain: aratuonline
 */
+
+/*
+* -------------------------------------------------------
+* Project: Project Name
+* Version: 1.0.0
+*
+* Author:  Sergio Costa
+* URL:     http://sergiocosta.net.br
+* Contact: sergio.costa@outlook.com
+*
+*
+* Copyright (c) 2015 - Sergio Costa
+* -------------------------------------------------------
+*/
+
+/* do not add any css beyond this point */
+
+/* where to edit css: 'assets/sass/*.scss' */

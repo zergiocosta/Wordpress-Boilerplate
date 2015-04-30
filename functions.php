@@ -25,6 +25,7 @@ require_once($functions_path . 'general.php');
 require_once($functions_path . 'optimize.php');
 require_once($functions_path . 'support.php');
 require_once($functions_path . 'posttype.php');
+require_once($functions_path . 'taxonomies.php');
 require_once($functions_path . 'admin.php');
 require_once($functions_path . 'google.php');
 require_once($functions_path . 'social.php');

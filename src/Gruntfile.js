@@ -1,6 +1,6 @@
 // -------------------------------------------------------
 // Gruntfile.js for Sergio Costa's projects
-// Version: 2.0.0
+// Version: 2.1.0
 //
 // Author:  Sergio Costa
 // URL:     http://www.equilibradigital.com
@@ -58,9 +58,9 @@ module.exports = function(grunt) {
             },
             js: {
                 files: [
-                    "<%= jshint.all %>"
+                    "<%= dirs.js %>/{,*/}*.js"
                 ],
-                tasks: ["jshint", "uglify", "notify:js"]
+                tasks: ["uglify", "notify:js"]
             },
             html: {
                 files: [
@@ -68,18 +68,6 @@ module.exports = function(grunt) {
                     "<%= dirs.app %>/*.{html,htm,shtml,shtm,xhtml,php,jsp,asp,aspx,erb,ctp}"
                 ]
             }
-        },
-
-        // JShint
-        // Para instalar na pasta src do projeto: $ npm install grunt-contrib-jshint --save-dev
-        jshint: {
-            options: {
-                jshintrc: ".jshintrc"
-            },
-            all: [
-                "Gruntfile.js",
-                "../assets/js/main.js"
-            ]
         },
 
         // Uglify
