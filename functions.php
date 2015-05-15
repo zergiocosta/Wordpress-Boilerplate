@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package Project Name
  */
@@ -20,12 +19,12 @@ $functions_path = get_template_directory() . '/functions/';
 /**
  * Require functions partials.
  */
-
 require_once($functions_path . 'general.php');
 require_once($functions_path . 'optimize.php');
 require_once($functions_path . 'support.php');
 require_once($functions_path . 'posttype.php');
 require_once($functions_path . 'taxonomies.php');
 require_once($functions_path . 'admin.php');
+require_once($functions_path . 'shortcodes.php');
 require_once($functions_path . 'google.php');
 require_once($functions_path . 'social.php');
