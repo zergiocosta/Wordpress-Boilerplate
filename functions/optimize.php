@@ -66,7 +66,7 @@ add_filter( 'the_generator', '__return_false' );
 /**
  * Remove injected CSS from gallery.
  */
-// add_filter( 'use_default_gallery_style', '__return_false' );
+add_filter( 'use_default_gallery_style', '__return_false' );
 
 /**
  * Add rel="nofollow" and remove rel="category".

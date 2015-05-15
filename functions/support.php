@@ -42,10 +42,30 @@ add_action('after_setup_theme', 'after_setup_theme_handler');
 $current_user = wp_get_current_user();
 if ($current_user->user_login != 'sergio') {
     /**
-     * Hide admin bar
+     * Hide admin bar from the front-end
      */
     add_filter( 'show_admin_bar', '__return_false' );
 }
+
+/*
+ * Stop images getting wrapped up in p tags when they get dumped out with the_content() for easier theme styling
+ */
+function wpfme_remove_img_ptags($content){
+    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', 'wpfme_remove_img_ptags');
+
+/*
+ * change amount of posts on the search page - set here to 50
+ */
+function wpfme_search_results_per_page( $query ) {
+    global $wp_the_query;
+    if ( ( ! is_admin() ) && ( $query === $wp_the_query ) && ( $query->is_search() ) ) {
+    $query->set( 'wpfme_search_results_per_page', 50 );
+    }
+    return $query;
+}
+add_action( 'pre_get_posts',  'wpfme_search_results_per_page'  );
 
 
 /////////////////////////////////////////////////

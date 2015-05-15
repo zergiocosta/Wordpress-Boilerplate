@@ -22,8 +22,9 @@ function enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
+
 $current_user = wp_get_current_user();
-if ($current_user->user_login != 'equilibradigital') {
+if ($current_user->user_login != 'sergio') {
     // admin styles
     function custom_wp_admin_style() {
         wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/assets/admin/admin.css', false, '1.0.0' );
@@ -32,7 +33,17 @@ if ($current_user->user_login != 'equilibradigital') {
     add_action( 'admin_enqueue_scripts', 'custom_wp_admin_style' );
 }
 
-// login styles
+/*
+ * Obscure login screen error messages
+ */
+function wpfme_login_obscure(){ 
+    return '<strong>Sorry</strong>: Think you have gone wrong somwhere!';
+}
+add_filter( 'login_errors', 'wpfme_login_obscure' );
+
+/*
+ * login styles
+ */
 function custom_login_style() {
     wp_enqueue_style( 'core', get_template_directory_uri() . '/assets/admin/login.css', false ); 
 }

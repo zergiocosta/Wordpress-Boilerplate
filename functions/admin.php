@@ -7,6 +7,12 @@
  * @package Project Name
  */
 
+
+/*
+ * Disable the theme / plugin text editor in Admin
+ */
+define('DISALLOW_FILE_EDIT', true);
+
 /*
  * Manage items from admin bar.
  */
