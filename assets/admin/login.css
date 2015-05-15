@@ -1,0 +1,16 @@
+h1 a { 
+	background: url() 50% 50% no-repeat !important; 
+	background-size: 90px 90px !important; 
+}
+body.login { 
+	background: url() !important;
+}
+.login form {
+	background-color: #000;
+}
+.login label {
+	color: white;
+}
+.login form input[type="submit"] {
+	background-color: #fff;
+}
