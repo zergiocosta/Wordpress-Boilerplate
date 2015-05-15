@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             js:   "../assets/js",
             sass: "../assets/sass",
             css:  "../assets/css",
-            img:  "../assets/images"
+            img:  "../assets/img"
         },
 
         // Metadata
