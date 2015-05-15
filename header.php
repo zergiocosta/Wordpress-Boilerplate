@@ -6,25 +6,24 @@
  */
 ?>
 <!DOCTYPE html>
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8) ]><!-->
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
 <head>
+    <meta charset="utf-8">
+
+    <?php
+        // General Constants
+        if(!defined('WP_SITE_URL'))  { define('WP_SITE_URL', get_bloginfo('url')); }
+        if(!defined('WP_THEME_URL')) { define('WP_THEME_URL', get_stylesheet_directory_uri()); }
+    ?>
+
     <script>
-        var baseUrl = "<?php bloginfo('url'); ?>";
+        var baseUrl = "<?php echo WP_SITE_URL; ?>";
     </script>
-    <!--[if lt IE 8]>
+    <!--[if lt IE 9]>
        <script type="text/javascript"> window.location.href = baseUrl + "ie/index.html"; </script>
     <![endif]-->
 
     <?php
-        // General Constants
-        if(!defined('WP_SITE_URL'))  { define('WP_SITE_URL', get_bloginfo('siteurl')); }
-        if(!defined('WP_THEME_URL')) { define('WP_THEME_URL', get_stylesheet_directory_uri()); }
-
         // General Variables
         $title_default = get_bloginfo('name');
         $keys_default  = '';
@@ -42,14 +41,13 @@
                 $image_default = wp_get_attachment_image_src($image_ID, 'thumbnail');
                 $image_default = $image_default[0];
             } else {
-                $image_default = WP_THEME_URL . '/assets/img/aratu-online-logo.png';
+                $image_default = WP_THEME_URL . '/assets/img/logo.png';
             }
         }
     ?>
 
     <title><?php wp_title('&raquo;', 'true', 'right'); ?></title>
 
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link type="text/plain" rel="author" href="<?php echo WP_THEME_URL; ?>/humans.txt" />
     <meta name="copyright" content="&copy; Copyright <?php echo date('Y'); ?> <?php echo $title_default; ?>" />
