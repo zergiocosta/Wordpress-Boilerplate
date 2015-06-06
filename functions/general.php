@@ -33,13 +33,18 @@ if ($current_user->user_login != 'sergio') {
     add_action( 'admin_enqueue_scripts', 'custom_wp_admin_style' );
 }
 
-/*
- * Obscure login screen error messages
+/**
+ * Change error msgs
  */
-function wpfme_login_obscure(){ 
-    return '<strong>Sorry</strong>: Think you have gone wrong somwhere!';
+function sclogin_login_error_msg() { 
+    $custom_error_msgs = array(
+        'Opa! Não vai entrar não, hein?',
+        'Aqui não é o seu lugar',
+        'YOU SHALL NOT PASS!'
+    );
+    return $custom_error_msgs[array_rand($custom_error_msgs)];;
 }
-add_filter( 'login_errors', 'wpfme_login_obscure' );
+add_filter( 'login_errors', 'login_error_msg' );
 
 /*
  * login styles
