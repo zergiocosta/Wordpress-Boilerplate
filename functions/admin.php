@@ -170,4 +170,24 @@ if ($current_user->user_login != 'sergio') {
 // add_filter( 'gettext', 'change_admin_label_names' );
 // add_filter( 'ngettext', 'change_admin_label_names' );
 
+
+/*
+ * Login definitions
+ */
+
+/**
+ * Custom logo URL.
+ */
+function sclogin_admin_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'sclogin_admin_logo_url' );
+/**
+ * Custom logo title.
+ */
+function sclogin_admin_logo_title() {
+    return get_bloginfo( 'name' );
+}
+add_filter( 'login_headertitle', 'sclogin_admin_logo_title' );
+
 ?>
