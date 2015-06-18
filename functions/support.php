@@ -47,6 +47,15 @@ if ($current_user->user_login != 'sergio') {
     add_filter( 'show_admin_bar', '__return_false' );
 }
 
+/**
+ * Allow comments when published
+ */
+function allow_comments_when_published( $ID, $post ) {
+    global $wpdb;
+    $wpdb->query("UPDATE `wp_posts` SET `comment_status` = 'open' WHERE $post->ID = $ID ");
+}
+add_action( 'publish_post', 'allow_comments_when_published', 10, 2 );
+
 /*
  * Stop images getting wrapped up in p tags when they get dumped out with the_content() for easier theme styling
  */
